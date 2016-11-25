@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Technical Exam</title>
+        <script src="JQ/jquery-2.1.4.js"></script>
+        <script type="text/javascript" src="JS/parctice exam .js"></script>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <script src="dist/sweetalert.min.js"></script> <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
+      <!-- <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Oswald|Pontano+Sans' rel='stylesheet' type='text/css'>-->
+    <style>
+      input[type="button"] 
+      {
+        margin:5px 5px;
+        background-color:#fff;
+        border:1px solid #dd31ae;
+        border-radius:5px;
+        width:65px;
+        font-family:arial;
+        font-size:16px;
+    float:left;
+      box-shadow: 1px 1px 1px #aaa;
+      }
+        input[type="button"]:hover , input[type="button"]:active
+      {
+         box-shadow: 2px 5px 5px #888888;
+         
+      }
+     #flag:hover , #flag:active
+      {
+         box-shadow: 2px 5px 5px #888888;
+         
+      }
+      #divExam table tr td h3{color:#dd31ae;}
+      .stack{
+        width:100%;
+        float:right;
+        margin:10px;
+        border:2px outset #333;
+        border-radius: 5px 0px 0px 5px;
+        border-right: 0px;
+      }
+    #divExam table {width:500px;height:200px;}
+      #divExam{
+        width:78%;
+        height: 230px;
+        float:left;
+        /*border:1px solid red;*/
+
+      }
+      #divQues{
+        width:100%;
+        height: 230px;
+        float:right;
+
+        /*border:1px solid blue; */
+      }
+      #flag
+      {
+        width:25px;
+        height:25px;
+        margin-left:36%;
+        margin-top: 1%;
+        position:absolute;
+      }
+      #massage ,#QuesMarkmassage
+      {
+        background-color:#999;
+        position: absolute;
+        overflow: hidden;
+        padding: 10px;
+        border-radius: 5px;
+        border:2px solid white;
+        width: 200px;
+        color:yellow;
+        margin-left:30%;
+        margin-top: 2%;
+        display: none;
+      }
+      #QuesMarkmassage
+      {
+        margin-left:-12%;
+        margin-top: 1%;
+      }
+      .btn-disable
+          {
+          cursor: default;
+          pointer-events: none;
+
+          /*Button disabled - CSS color class*/
+          color: #c0c0c0;
+          background-color: #ffffff;
+
+          }
+    .buttons ,#timer
+    {
+      width:90%;
+      float:left;
+    }
+      .sidebar2   input,.sidebar3 input{ margin:-25px 0px 0px 45px; color:red; font-size:12px;border:1px; height:30px;color:#dd31ae}
+    .sidebar2   input:hover,.sidebar3  input:hover {color:#45303f;}
+    .sidebar2    input.active ,.sidebar3    input.active{color:#dd31ae;}
+    .sidebar2 , .sidebar3{overflow: hidden;min-height:400px;width:180px;margin-right: 20px;}
+    .panel2{ width:100%;height:355px;overflow-y:scroll;background:#ffffff; border:1px solid #ebebeb;text-align: center;}
+    .panel2 h2{  font-size:16px; font-weight:normal; color:#333; padding-bottom:20px; border-bottom:1px solid #ebebeb; margin-bottom:30px; padding-top:20px;}
+    ::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+}
+
+table th{color:#dd31ae; padding: 10px; font-size: 20px}
+#time_result{
+  border-radius: 10px;
+  background-color: #ddd;
+  border:2px solid #aaa;
+  width:75%;
+  height: 250px;
+  color:red;
+  margin: 10px auto;
+}
+
+#Div_resalut table{ margin: 10px auto;width:75%;border-radius: 10px;border:2px solid #aaa;}
+#time_result table{ margin: 10px auto;width:75%;background-color: red;}
+#Div_resalut table th{ padding: 10px;color:red;font-size: 18px;}
+      </style>
+
+
+</head>
+<body>
+<div class="header-wrap">
+  <div class="header">
+    <div class="menu">
+      <ul>
+        <ul>
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="exam.html" class="active">Exam</a></li>
+    <li><a href="pExam.html">Particpate Exam</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      </ul>
+    </div>
+    <div class="social-media">
+      <ul>
+        <li><a href="#"><img src="images/aim.gif" alt="aim" /></a></li>
+        <li><a href="#"><img src="images/facebook.gif" alt="facebook" /></a></li>
+        <li><a href="#"><img src="images/linkedin.gif" alt="linkedin" /></a></li>
+        <li><a href="#"><img src="images/twitter.gif" alt="twitter"/></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- end of header wrapper -->
+<div class="logo-sarch-wrap">
+  <div class="logo-search-container">
+    <div class="logo">
+      <h1 id="logo"></h1>
+    </div>
+    <div class="search">
+      <div class="search-input">
+        <input type="text" class="search-text-field" value="Search Here ..." />
+      </div>
+      <div class="search-button"><a href="#"><img src="images/serach-icon.gif" alt="search" /></a></div>
+    </div>
+  </div>
+</div>
+<!-- end of header wrapper -->
+<!-- end of header wrapper -->
+<div class="clearing"></div>
+<!-- end of panel wrapper -->
+<div class="page-wrapper"  id="Div_Body_Exam">
+  <div class="primary-content marginTop">
+    <div class="panel" style="width:500px">
+      
+      <div class="content padBottom" >
+        <div id="divExam"></div>
+      
+        <div id="timer"></div>
+    <div class="buttons">
+      <input type="button" id="fbtn" name="first" value="first"/>
+      <input type="button" id="pbtn" name="prev" value="prev"/>
+      <input type="button" id="nbtn" name="next" value="next"/>
+      <input type="button" id="lbtn" name="last" value="last"/>
+      <input type="button" id="finish" name="finish" value="finish"/>
+      <input type="button" id="answer" name="answer" value="answer"/>
+    </div>  
+      </div>
+      <div class="clearing"></div>
+    </div>
+  </div>
+  <!-- end of Primary content -->
+  <div class="sidebar2">
+    <div class="panel2">
+      <h2>Skipped Ques</h2>
+        <div id="divQues"></div>
+    </div>
+   
+  </div>
+   <!-- end of Primary content -->
+  <div class="sidebar3">
+    <div class="panel2">
+      <div class="title">
+        <h2>Flaged Ques</h2>
+      </div>
+      <div class="content">
+        <div id="divMark"></div>
+      </div>
+    
+    </div>
+   
+ 
+  <!-- end of Sidebar -->
+</div>
+<!-- end of page wrapper -->
+</div>
+
+<div class="clearing"></div>
+<div class="footer-wrapper marginTop">
+  <div class="footer"> Copyright (c) websitename. All rights reserved. Designed by: <a href="http://alltemplateneeds.com">www.alltemplateneeds.com</a> ITI Intake 36 .... Mansoura Branch </div>
+</div>
+</body>
+</html>
